@@ -5,8 +5,8 @@ const History = ({ history, moveTo, currentMove }) => {
     <div className="history-wrapper">
       <ul className="history">
         {history.map((_, move) => {
+          /* move is the index here */
           return (
-            //move is the index here
             <li key={move}>
               <button
                 className={`btn-move ${move === currentMove ? 'active' : ''}`}
@@ -15,7 +15,7 @@ const History = ({ history, moveTo, currentMove }) => {
                   moveTo(move);
                 }}
               >
-                {move == 0 ? 'Go to game start' : `Go to move #${move}`}
+                {move === 0 ? 'Go to game start' : `Go to move #${move}`}
               </button>
             </li>
           );
